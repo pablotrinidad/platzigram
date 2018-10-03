@@ -51,6 +51,9 @@ python manage.py runserver
 - [CreateView, UpdateView y FormView](https://github.com/pablotrinidad/platzigram/tree/33-CrateView-FormView-UpdateView)
 - [Generic auth views](https://github.com/pablotrinidad/platzigram/tree/34-Generic-Auth-Views)
 
+### Extras
+- [Tutorial: Crea un Login Social con Django](https://platzi.com/blog/tutorial-login-social-con-django/)
+
 ## License
 [This project is under MIT License](https://opensource.org/licenses/MIT)
 
