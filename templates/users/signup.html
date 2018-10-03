@@ -1,5 +1,7 @@
 {% extends "users/base.html" %}
 
+{% load socialaccount %}
+
 {% block head_content %}
 <title>Platzigram sign up</title>
 {% endblock %}
@@ -11,8 +13,11 @@
 
         {{ form.as_p }}
 
-        <button class="btn btn-primary btn-block mt-5" type="submit">Register!</button>
-
+        <button class="btn btn-secondary btn-block mt-5" type="submit">Register!</button>
+        <a class="btn btn-primary btn-block" href="{% provider_login_url "facebook" method="oauth2" %}">
+            <span class="fab fa-facebook"></span>
+            Signup with facebook
+        </a>
     </form>
 
 {% endblock %}
