@@ -33,7 +33,7 @@ class PostDetailView(LoginRequiredMixin, DetailView):
 class CreatePostView(LoginRequiredMixin, CreateView):
     """Create a new post."""
 
-    template_name = 'posts/new.hTml'
+    template_name = 'posts/new.html'
     form_class = PostForm
     success_url = reverse_lazy('posts:feed')
 
