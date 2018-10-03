@@ -97,6 +97,7 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
+
 WSGI_APPLICATION = 'platzigram.wsgi.application'
 
 
