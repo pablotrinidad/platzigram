@@ -9,7 +9,7 @@ from django.views.generic import CreateView, DetailView, ListView
 from posts.forms import PostForm
 
 # Models
-from posts.models import Post
+from posts.models import Post, Like
 
 from django.shortcuts import redirect
 
