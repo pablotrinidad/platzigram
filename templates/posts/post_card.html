@@ -11,9 +11,19 @@
     <img style="width: 100%;" src="{{ post.photo.url }}" alt="{{ post.title }}">
 
     <p class="mt-1 ml-2" >
-        <a href="" style="color: #000; font-size: 20px;">
-            <i class="far fa-heart"></i>
-        </a> 30 likes
+       <form action="{% url 'posts:togglelike' post.id %}" method="POST">
+            {% csrf_token %}
+            <button class="btn btn-link" type="submit">
+                {% if post.likes.all %}
+                    {% for like in post.likes.all %}
+                        {% if like.user == request.user and like.post == post %}
+                            <i class="fas fa-heart"></i>
+                        {% endif %}
+                    {% endfor %}
+                    <i class="far fa-heart"></i>
+                {% endif %}
+            </button> {{ post.likes.count }}
+        </form>
     </p>
     <p class="ml-2 mt-0 mb-2">
         <b>{{ post.title }}</b> - <small>{{ post.created }}</small>
