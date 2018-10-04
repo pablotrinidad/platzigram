@@ -11,6 +11,8 @@ from posts.forms import PostForm
 # Models
 from posts.models import Post
 
+from django.shortcuts import redirect
+
 
 class PostsFeedView(LoginRequiredMixin, ListView):
     """Return all published posts."""
