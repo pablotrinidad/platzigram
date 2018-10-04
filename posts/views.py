@@ -43,3 +43,17 @@ class CreatePostView(LoginRequiredMixin, CreateView):
         context['user'] = self.request.user
         context['profile'] = self.request.user.profile
         return context
+    
+ def toggle_like(request, pk):
+    user = request.user
+    post = Post.objects.get(pk=pk)
+    like = Like.objects.filter(user=user).filter(post=post)
+    response_data = {}
+    if like:
+        response_data['code'] = 204
+        like.delete()
+    else:
+        response_data['code'] = 200
+        Like.objects.create(user=user,post=post)
+    response_data['message'] = 'success'
+    return redirect('/')
