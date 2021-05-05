@@ -4,7 +4,7 @@
 from django import forms
 
 # Models
-from posts.models import Post
+from posts.models import Post, Comment
 
 
 class PostForm(forms.ModelForm):
@@ -15,3 +15,13 @@ class PostForm(forms.ModelForm):
 
         model = Post
         fields = ('user', 'profile', 'title', 'photo')
+
+
+class CommentForm(forms.ModelForm):
+    """Comment model form."""
+
+    comment = forms.CharField(widget=forms.Textarea)
+
+    class Meta:
+        model = Comment
+        fields = ("user", "profile", 'post', "comment")

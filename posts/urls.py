@@ -15,6 +15,12 @@ urlpatterns = [
     ),
 
     path(
+        route='posts/save_comment',
+        view=views.save_comment,
+        name='save_comment'
+    ),
+
+    path(
         route='posts/new/',
         view=views.CreatePostView.as_view(),
         name='create'
